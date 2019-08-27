@@ -6,7 +6,7 @@ using namespace std;
 
 int main(void)
 {
-    int player_count= 2;
+    int player_count = 2;
     vector <battleship> player;
 
     /*cout << "Enter Player count (2-5): ";
@@ -18,7 +18,7 @@ int main(void)
 
     do
     {
-        //Only attack ships in here
+        //Only call class functions in here
         return 0;
     } while(1); // Until game is over
 }
