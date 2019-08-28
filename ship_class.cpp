@@ -1,8 +1,11 @@
 #ifndef SHIPS_STRUCT
 #define SHIPS_STRUCT
 
+#include <iostream>
 #include <string>
 #include <vector>
+#include "battleship_class.cpp"
+using namespace std;
 
 class ship
 {
@@ -17,8 +20,8 @@ class ship
 
     ship()
     {
-        name = "";
-        size = 0;
+        name = "NO_NAME";
+        size = 1;
         sunk = false;
     }
 
@@ -27,6 +30,13 @@ class ship
         name = ship_name;
         size = ship_size;
         sunk = false;
+        position_ship();
+    }
+
+    void position_ship()
+    {
+        cout << "Here: Press any Key";
+        getchar();
     }
 };
 

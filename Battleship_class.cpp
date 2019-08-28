@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <vector>
-#include "ship_struct.cpp"
+#include "ship_class.cpp"
 using namespace std;
 
 class battleship
@@ -14,6 +14,7 @@ class battleship
 private: 
     string player_name;
     vector <ship> ships;
+    vector <int> miss;
 
 public:
 
@@ -21,7 +22,6 @@ public:
     {
         SetPlayerName();
         Add_Ships();
-        PositionShips();
     }
 
     void SetPlayerName()
@@ -66,13 +66,13 @@ public:
 
     void Add_Ships()
     {
+        string default_names[5] = {"Carrier", "Battleship", "Destroyer", "Submarine", "Patrol Boat"};
+        int default_sizes[5] = {5, 4, 3, 3, 2};
 
-    }
+        for(int x = 0; x < 5; x++)
+            ships.push_back(ship(default_names[x], default_sizes[x]));
 
-    void PositionShips()
-    {
-        Print_Board(0);
-        system("pause");
+        //TODO Add custom ship compatablity
     }
 
     void Print_Board(int modifier)
