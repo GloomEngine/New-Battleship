@@ -4,6 +4,8 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <vector>
+#include "ship_struct.cpp"
 using namespace std;
 
 class battleship
@@ -11,12 +13,14 @@ class battleship
 
 private: 
     string player_name;
+    vector <ship> ships;
 
 public:
 
     battleship()
     {
         SetPlayerName();
+        Add_Ships();
         PositionShips();
     }
 
@@ -50,7 +54,6 @@ public:
         string message = "Players look away while " + player_name + " enters their ships\n";
         PrintCenteredText(message);
 
-        cin.ignore();
         cout << endl;
         PrintCenteredText("Press any key when ready");
         getchar();
@@ -61,13 +64,18 @@ public:
     string GetPlayerName()
     {return player_name;}
 
+    void Add_Ships()
+    {
+
+    }
+
     void PositionShips()
     {
-        Print_Board();
+        Print_Board(0);
         system("pause");
     }
 
-    void Print_Board()
+    void Print_Board(int modifier)
     {
         cout << "\n\n     1   2   3   4   5   6   7   8   9   0\n";
 
@@ -93,16 +101,10 @@ public:
 					cout << " | ";
 
 					if (y < 10)
-                    {
-                        /*if(!temp.empty() && convert(x, y) == temp[0].first)
-                        {
-                            cout << temp[0].second;
-                            temp.erase(temp.begin());
-                        }
-                        else*/
-                            cout << " ";                      
-                    }
-					else { cout << "\t|"; }
+                        cout << " ";                      
+                    
+					else
+                        cout << "\t|";
 				}
 			}
             cout << endl;
