@@ -69,8 +69,9 @@ public:
         string default_names[5] = {"Carrier", "Battleship", "Destroyer", "Submarine", "Patrol Boat"};
         int default_sizes[5] = {5, 4, 3, 3, 2};
 
-        for(int x = 0; x < 5; x++)
-            ships.push_back(ship(default_names[x], default_sizes[x]));
+        //for(int x = 0; x < 5; x++)
+            //TODO add ship placement function (return vector with positions)
+            //ships.push_back(ship(default_names[x], default_sizes[x], positions));
 
         //TODO Add custom ship compatablity
     }

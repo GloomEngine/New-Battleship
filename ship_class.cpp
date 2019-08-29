@@ -25,18 +25,17 @@ class ship
         sunk = false;
     }
 
-    ship(string ship_name, int ship_size)
+    ship(string ship_name, int ship_size, vector <int> spots)
     {
         name = ship_name;
         size = ship_size;
         sunk = false;
-        position_ship();
+        position = spots;
     }
 
-    void position_ship()
+    bool Placement_check(ship *other)
     {
-        cout << "Here: Press any Key";
-        getchar();
+        return false;
     }
 };
 
