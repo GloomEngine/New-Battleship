@@ -4,38 +4,73 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 #include "battleship_class.cpp"
 using namespace std;
 
 class ship
 {
-    private:
-        string name;
-        int size;
-        bool sunk;
-        vector <int> hit;
-        vector <int> position;
-    
-    public:
+private:
+    string name;
+    int size;
+    bool sunk;
+    vector<int> positions;
 
+public:
     ship()
     {
         name = "NO_NAME";
-        size = 1;
+        size = 0;
         sunk = false;
     }
 
-    ship(string ship_name, int ship_size, vector <int> spots)
+    ship(string ship_name, int ship_size)
     {
         name = ship_name;
         size = ship_size;
         sunk = false;
-        position = spots;
     }
 
-    bool Placement_check(ship *other)
+    void Set_Position(vector<int> spots)
+    {
+        positions = spots;
+    }
+
+    vector<int> Get_Position()
+    {
+        return positions;
+    }
+
+    int Get_Size()
+    {
+        return size;
+    }
+
+    bool Position_Check(int position)
+    {
+        if (find(positions.begin(), positions.end(), position) != positions.end())
+            return true;
+
+        return false;
+    }
+
+    bool Placement_Check(ship *other)
     {
         return false;
+    }
+
+    bool Placement_Check(int start, int finish)
+    {
+        vector<int> temp = positions;
+
+        sort(temp.begin(), temp.end());
+
+        //return true;
+    }
+
+    bool is_Sunk()
+    {
+        return sunk;
     }
 };
 
